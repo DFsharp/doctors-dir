@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Medical Associates — Staff Directory</title>
+  <title>CIRUJANOS PLÁSTICOS Y DERMATOLOGÍA</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:     #0d1f3c;
+      --navy: #0d1f3c;
       --navy-mid: #1a3460;
-      --teal:     #1a7f74;
-      --teal-lt:  #22a99b;
-      --cream:    #f5f2ec;
-      --gold:     #b89a5e;
-      --text:     #2c2c2c;
-      --muted:    #7a8499;
+      --teal: #1a7f74;
+      --teal-lt: #22a99b;
+      --cream: #f5f2ec;
+      --gold: #b89a5e;
+      --text: #2c2c2c;
+      --muted: #7a8499;
     }
 
     html, body {
@@ -27,7 +27,6 @@
       overflow-x: hidden;
     }
 
-    /* ── Background texture ── */
     body::before {
       content: '';
       position: fixed;
@@ -38,7 +37,6 @@
       pointer-events: none;
     }
 
-    /* ── Layout ── */
     .page {
       min-height: 100vh;
       display: flex;
@@ -47,7 +45,6 @@
       padding: 60px 24px 80px;
     }
 
-    /* ── Header ── */
     header {
       text-align: center;
       margin-bottom: 64px;
@@ -56,25 +53,6 @@
       animation: fadeUp 0.8s ease forwards;
     }
 
-    .cross-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 52px;
-      height: 52px;
-      margin-bottom: 20px;
-      position: relative;
-    }
-    .cross-icon::before,
-    .cross-icon::after {
-      content: '';
-      position: absolute;
-      background: var(--teal);
-      border-radius: 2px;
-    }
-    .cross-icon::before { width: 8px;  height: 52px; }
-    .cross-icon::after  { width: 52px; height: 8px; }
-
     .clinic-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 5vw, 3.2rem);
@@ -82,15 +60,7 @@
       letter-spacing: 0.01em;
       color: var(--navy);
       line-height: 1.1;
-    }
-
-    .clinic-sub {
-      margin-top: 8px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--gold);
     }
 
     .divider {
@@ -100,6 +70,7 @@
       margin: 22px auto 0;
       width: 240px;
     }
+
     .divider span { flex: 1; height: 1px; background: var(--gold); opacity: 0.5; }
     .divider em { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: 0.7; font-style: normal; }
 
@@ -111,7 +82,6 @@
       letter-spacing: 0.03em;
     }
 
-    /* ── Section label ── */
     .section-label {
       font-size: 0.7rem;
       font-weight: 500;
@@ -121,9 +91,9 @@
       margin-bottom: 28px;
       opacity: 0;
       animation: fadeUp 0.7s ease 0.3s forwards;
+      text-align: center;
     }
 
-    /* ── Cards grid ── */
     .cards {
       display: flex;
       flex-direction: column;
@@ -132,7 +102,6 @@
       max-width: 500px;
     }
 
-    /* ── Doctor card / button ── */
     .doctor-btn {
       display: flex;
       align-items: center;
@@ -154,7 +123,7 @@
     }
 
     .doctor-btn:nth-child(1) { animation: fadeUp 0.65s ease 0.45s forwards; }
-    .doctor-btn:nth-child(2) { animation: fadeUp 0.65s ease 0.6s  forwards; }
+    .doctor-btn:nth-child(2) { animation: fadeUp 0.65s ease 0.6s forwards; }
     .doctor-btn:nth-child(3) { animation: fadeUp 0.65s ease 0.75s forwards; }
 
     .doctor-btn::before {
@@ -174,11 +143,10 @@
       box-shadow: 0 10px 32px rgba(13,31,60,0.12);
       border-color: rgba(26,127,116,0.25);
     }
-    .doctor-btn:hover::before { transform: scaleY(1); }
 
+    .doctor-btn:hover::before { transform: scaleY(1); }
     .doctor-btn:active { transform: translateY(-1px); }
 
-    /* Avatar */
     .avatar {
       flex-shrink: 0;
       width: 52px;
@@ -195,7 +163,6 @@
       letter-spacing: 0.02em;
     }
 
-    /* Info */
     .doctor-info { flex: 1; }
 
     .doctor-name {
@@ -213,7 +180,6 @@
       letter-spacing: 0.04em;
     }
 
-    /* WhatsApp arrow icon */
     .wa-icon {
       flex-shrink: 0;
       display: flex;
@@ -227,11 +193,10 @@
       opacity: 0.6;
       transition: opacity 0.2s;
     }
-    .doctor-btn:hover .wa-icon { opacity: 1; }
 
+    .doctor-btn:hover .wa-icon { opacity: 1; }
     .wa-icon svg { width: 20px; height: 20px; }
 
-    /* ── Footer ── */
     footer {
       margin-top: 60px;
       font-size: 0.72rem;
@@ -239,88 +204,88 @@
       letter-spacing: 0.08em;
       opacity: 0;
       animation: fadeUp 0.6s ease 1s forwards;
+      text-align: center;
+      text-transform: uppercase;
     }
 
-    /* ── Animation ── */
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
     }
+
+    @media (max-width: 520px) {
+      .page { padding: 48px 18px 64px; }
+      header { margin-bottom: 48px; }
+      .doctor-btn { padding: 20px 18px; gap: 16px; }
+      .avatar { width: 48px; height: 48px; font-size: 1.05rem; }
+      .wa-icon span { display: none; }
+    }
   </style>
 </head>
+
 <body>
-<div class="page">
+  <div class="page">
+    <header>
+      <div class="clinic-name">CIRUJANOS PLÁSTICOS<br>Y DERMATOLOGÍA</div>
+      <div class="divider"><span></span><em></em><span></span></div>
+      <p class="header-tagline">Selecciona un especialista para enviar un mensaje vía WhatsApp</p>
+    </header>
 
-  <header>
-    <div class="cross-icon"></div>
-    <div class="clinic-name">Lakeside Medical<br>Associates</div>
-    <div class="clinic-sub">Physician Directory</div>
-    <div class="divider"><span></span><em></em><span></span></div>
-    <p class="header-tagline">Select a physician below to send a message via WhatsApp</p>
-  </header>
+    <div class="section-label">Consultorio ubicado en Punto Central, SPGG</div>
 
-  <div class="section-label">Our Physicians</div>
+    <div class="cards">
+      <a class="doctor-btn"
+         href="https://wa.me/518134030903?text=Hola%20Dr.%20Jaime%20O.%20Salcedo%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita."
+         target="_blank" rel="noopener">
+        <div class="avatar">JS</div>
+        <div class="doctor-info">
+          <div class="doctor-name">Dr. Jaime O. Salcedo</div>
+          <div class="doctor-specialty">Cirujano Plástico y Reconstructivo Certificado</div>
+        </div>
+        <div class="wa-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.527 5.845L.057 23.7a.75.75 0 0 0 .921.921l5.855-1.47A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.952 9.952 0 0 1-5.354-1.555l-.383-.228-3.972.997.997-3.972-.228-.383A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          </svg>
+          <span>Mensaje</span>
+        </div>
+      </a>
 
-  <div class="cards">
+      <a class="doctor-btn"
+         href="https://wa.me/528119800724?text=Hola%20Dr.%20Jos%C3%A9%20Daniel%20Guerra%20Rend%C3%B3n%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita."
+         target="_blank" rel="noopener">
+        <div class="avatar">JG</div>
+        <div class="doctor-info">
+          <div class="doctor-name">Dr. José Daniel Guerra Rendón</div>
+          <div class="doctor-specialty">Cirujano Plástico y Reconstructivo Certificado</div>
+        </div>
+        <div class="wa-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.527 5.845L.057 23.7a.75.75 0 0 0 .921.921l5.855-1.47A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.952 9.952 0 0 1-5.354-1.555l-.383-.228-3.972.997.997-3.972-.228-.383A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          </svg>
+          <span>Mensaje</span>
+        </div>
+      </a>
 
-    <!-- Doctor 1 -->
-    <a class="doctor-btn"
-       href="https://wa.me/10000000001?text=Hello%20Dr.%20Smith%2C%20I%20would%20like%20to%20schedule%20an%20appointment."
-       target="_blank" rel="noopener">
-      <div class="avatar">JS</div>
-      <div class="doctor-info">
-        <div class="doctor-name">Dr. Jane Smith</div>
-        <div class="doctor-specialty">General Practice &amp; Primary Care</div>
-      </div>
-      <div class="wa-icon">
-        <!-- WhatsApp icon -->
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.527 5.845L.057 23.7a.75.75 0 0 0 .921.921l5.855-1.47A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.952 9.952 0 0 1-5.354-1.555l-.383-.228-3.972.997.997-3.972-.228-.383A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
-        </svg>
-        Message
-      </div>
-    </a>
+      <a class="doctor-btn"
+         href="https://wa.me/528117999663?text=Hola%20Dra.%20Norma%20V%C3%A1zquez%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita."
+         target="_blank" rel="noopener">
+        <div class="avatar">NV</div>
+        <div class="doctor-info">
+          <div class="doctor-name">Dra. Norma Vázquez</div>
+          <div class="doctor-specialty">Dermatóloga y Tricóloga Certificada</div>
+        </div>
+        <div class="wa-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.527 5.845L.057 23.7a.75.75 0 0 0 .921.921l5.855-1.47A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.952 9.952 0 0 1-5.354-1.555l-.383-.228-3.972.997.997-3.972-.228-.383A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          </svg>
+          <span>Mensaje</span>
+        </div>
+      </a>
+    </div>
 
-    <!-- Doctor 2 -->
-    <a class="doctor-btn"
-       href="https://wa.me/10000000002?text=Hello%20Dr.%20Johnson%2C%20I%20would%20like%20to%20schedule%20an%20appointment."
-       target="_blank" rel="noopener">
-      <div class="avatar">MJ</div>
-      <div class="doctor-info">
-        <div class="doctor-name">Dr. Michael Johnson</div>
-        <div class="doctor-specialty">Internal Medicine</div>
-      </div>
-      <div class="wa-icon">
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.527 5.845L.057 23.7a.75.75 0 0 0 .921.921l5.855-1.47A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.952 9.952 0 0 1-5.354-1.555l-.383-.228-3.972.997.997-3.972-.228-.383A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
-        </svg>
-        Message
-      </div>
-    </a>
-
-    <!-- Doctor 3 -->
-    <a class="doctor-btn"
-       href="https://wa.me/10000000003?text=Hello%20Dr.%20Patel%2C%20I%20would%20like%20to%20schedule%20an%20appointment."
-       target="_blank" rel="noopener">
-      <div class="avatar">AP</div>
-      <div class="doctor-info">
-        <div class="doctor-name">Dr. Anika Patel</div>
-        <div class="doctor-specialty">Pediatrics &amp; Family Medicine</div>
-      </div>
-      <div class="wa-icon">
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.527 5.845L.057 23.7a.75.75 0 0 0 .921.921l5.855-1.47A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.952 9.952 0 0 1-5.354-1.555l-.383-.228-3.972.997.997-3.972-.228-.383A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
-        </svg>
-        Message
-      </div>
-    </a>
-
+    <footer>&copy; 2026 CIRUJANOS PLÁSTICOS Y DERMATÓLOGOS CERTIFICADOS MTY - ALL RIGHTS RESERVED</footer>
   </div>
-
-  <footer>&copy; 2026 Lakeside Medical Associates &nbsp;·&nbsp; All rights reserved</footer>
-
-</div>
 </body>
 </html>
